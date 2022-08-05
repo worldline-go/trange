@@ -9,10 +9,6 @@ import (
 	"github.com/worldline-go/trange"
 )
 
-const (
-	DateLayout = "2006-01-02"
-)
-
 func TestDay(t *testing.T) {
 	testCases := map[string]struct {
 		DateStr   string
@@ -24,6 +20,17 @@ func TestDay(t *testing.T) {
 		"Test with Europe/Amsterdam": {
 			DateStr:  "2022-08-05",
 			Location: "Europe/Amsterdam",
+			WantStart: func(loc *time.Location) time.Time {
+				return time.Date(2022, 8, 5, 0, 0, 0, 0, loc)
+			},
+			WantEnd: func(loc *time.Location) time.Time {
+				return time.Date(2022, 8, 5, 23, 59, 59, 999_999_999, loc)
+			},
+			HasError: false,
+		},
+		"Test with Asia/Taipei": {
+			DateStr:  "2022-08-05",
+			Location: "Asia/Taipei",
 			WantStart: func(loc *time.Location) time.Time {
 				return time.Date(2022, 8, 5, 0, 0, 0, 0, loc)
 			},
@@ -57,6 +64,8 @@ func TestDay(t *testing.T) {
 			} else {
 				assert.NoError(t, err)
 			}
+
+			t.Logf("location: %s, start: %s, end: %s", tc.Location, start, end)
 
 			assert.Equal(t, start, tc.WantStart(loc))
 			assert.Equal(t, end, tc.WantEnd(loc))
