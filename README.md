@@ -16,6 +16,7 @@ Example
 package main
 
 import (
+    "fmt"
     "time"
 
     "github.com/worldline-go/trange"
