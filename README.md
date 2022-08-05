@@ -31,6 +31,7 @@ func main() {
 
     start, end, _ := trange.Day("2022-08-05", loc)
 
+    // start 2022-08-05 00:00:00 +0200 CEST end 2022-08-05 23:59:59.999999999 +0200 CEST
     fmt.Println("start", start, "end", end)
 }
 ```
