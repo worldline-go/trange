@@ -1,5 +1,9 @@
 # trange
 
+[![Codecov](https://img.shields.io/codecov/c/github/worldline-go/trange?logo=codecov&style=flat-square)](https://app.codecov.io/gh/worldline-go/trange)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/worldline-go/trange/Test?logo=github&style=flat-square&label=ci)](https://github.com/worldline-go/trange/actions)
+[![Go Reference](https://pkg.go.dev/badge/github.com/worldline-go/trange.svg)](https://pkg.go.dev/github.com/worldline-go/trange)
+
 This repository help you to get the date range by given date
 
 ## Usage
