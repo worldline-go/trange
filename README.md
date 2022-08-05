@@ -22,7 +22,7 @@ import (
 )
 
 func main() {
-	loc, _ := time.LoadLocation("Europe/Amsterdam")
+    loc, _ := time.LoadLocation("Europe/Amsterdam")
 
     start, end, _ := trange.Day("2022-08-05", loc)
 
